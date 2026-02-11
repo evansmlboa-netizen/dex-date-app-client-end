@@ -9,7 +9,7 @@ const AppHeader = () => {
           <div className="w-8 h-8 rounded-xl gradient-primary flex items-center justify-center">
             <span className="text-white font-bold text-sm">V</span>
           </div>
-          <span className="text-lg font-bold text-foreground">VioletConnect</span>
+          <span className="text-lg font-bold shimmer-text">VioletConnect</span>
         </Link>
 
         <div className="flex items-center gap-2">

@@ -112,6 +112,17 @@
     opacity: 0.3;
     pointer-events: none;
     z-index: 0;
+    animation: blob-float 12s ease-in-out infinite alternate;
+  }
+
+  .gradient-bg-blob:nth-child(2) {
+    animation-delay: -4s;
+    animation-duration: 15s;
+  }
+
+  .gradient-bg-blob:nth-child(3) {
+    animation-delay: -8s;
+    animation-duration: 10s;
   }
 
   .status-pending {
@@ -139,4 +150,64 @@
     60% { content: '..'; }
     80%, 100% { content: '...'; }
   }
+
+  /* Staggered card entrance */
+  .stagger-card {
+    opacity: 0;
+    transform: translateY(24px) scale(0.97);
+    animation: card-enter 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  .stagger-card:nth-child(1) { animation-delay: 0ms; }
+  .stagger-card:nth-child(2) { animation-delay: 80ms; }
+  .stagger-card:nth-child(3) { animation-delay: 160ms; }
+  .stagger-card:nth-child(4) { animation-delay: 240ms; }
+  .stagger-card:nth-child(5) { animation-delay: 320ms; }
+  .stagger-card:nth-child(6) { animation-delay: 400ms; }
+
+  @keyframes card-enter {
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  /* Header title shimmer */
+  .shimmer-text {
+    background: linear-gradient(
+      110deg,
+      hsl(var(--foreground)) 35%,
+      hsl(var(--primary)) 50%,
+      hsl(var(--foreground)) 65%
+    );
+    background-size: 250% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 4s ease-in-out infinite;
+  }
+
+  @keyframes shimmer {
+    0%, 100% { background-position: 100% 0; }
+    50% { background-position: 0 0; }
+  }
+
+  /* Bottom nav active dot */
+  .nav-dot {
+    @apply w-1 h-1 rounded-full bg-primary mx-auto mt-0.5;
+    animation: dot-pop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  @keyframes dot-pop {
+    0% { transform: scale(0); }
+    100% { transform: scale(1); }
+  }
+}
+
+/* Blob float animation */
+@keyframes blob-float {
+  0% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(15px, -20px) scale(1.05); }
+  66% { transform: translate(-10px, 15px) scale(0.95); }
+  100% { transform: translate(8px, -8px) scale(1.02); }
 }

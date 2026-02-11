@@ -11,7 +11,7 @@ interface ProfileCardProps {
 const ProfileCard = ({ profile, onViewProfile, onRequestTelegram, onSkip }: ProfileCardProps) => {
   return (
     <div
-      className="glass-card overflow-hidden transition-all duration-200 hover:-translate-y-1 hover:shadow-xl cursor-pointer group"
+      className="glass-card overflow-hidden transition-all duration-200 hover:-translate-y-1 hover:shadow-xl cursor-pointer group stagger-card"
       onClick={() => onViewProfile(profile)}
     >
       <div className="relative aspect-[3/4] overflow-hidden rounded-t-2xl">
