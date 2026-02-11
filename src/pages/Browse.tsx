@@ -34,8 +34,8 @@ const Browse = () => {
     <>
       <div className="px-4 py-6 max-w-3xl mx-auto relative z-10">
         <div className="mb-6">
-          <h1 className="text-2xl font-bold text-foreground">Discover</h1>
-          <p className="text-sm text-muted-foreground mt-1">
+          <h1 className="text-2xl font-bold text-foreground animate-fade-in">Discover</h1>
+          <p className="text-sm text-muted-foreground mt-1 animate-fade-in" style={{ animationDelay: '100ms' }}>
             {visibleProfiles.length} profiles near you
           </p>
         </div>

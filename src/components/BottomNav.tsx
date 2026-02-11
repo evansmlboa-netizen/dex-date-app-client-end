@@ -19,12 +19,13 @@ const BottomNav = () => {
             <Link
               key={name}
               to={href}
-              className={`flex flex-col items-center gap-0.5 px-4 py-2 rounded-xl transition-colors duration-200 ${
-                active ? 'text-primary' : 'text-muted-foreground hover:text-foreground'
+              className={`flex flex-col items-center gap-0.5 px-4 py-2 rounded-xl transition-all duration-200 ${
+                active ? 'text-primary scale-105' : 'text-muted-foreground hover:text-foreground'
               }`}
             >
-              <Icon className="w-5 h-5" strokeWidth={active ? 2.5 : 1.5} />
+              <Icon className={`w-5 h-5 transition-transform duration-200 ${active ? 'animate-bounce-once' : ''}`} strokeWidth={active ? 2.5 : 1.5} />
               <span className="text-[10px] font-medium">{name}</span>
+              {active && <span className="nav-dot" />}
             </Link>
           );
         })}
